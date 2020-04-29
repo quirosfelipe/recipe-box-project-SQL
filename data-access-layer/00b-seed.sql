@@ -9,7 +9,7 @@
 
 -- YOUR CODE HERE
 
-
+set role recipe_box_app;
 
 
 
@@ -26,7 +26,13 @@
 
 -- YOUR CODE HERE
 
-
+create table recipes(
+  id serial,
+  title varchar(200) not null,
+  created timestamp not null default CURRENT_TIMESTAMP,
+  updated timestamp not null default CURRENT_TIMESTAMP,
+  primary key(id)
+  );
 
 
 
@@ -48,6 +54,14 @@
 
 -- YOUR CODE HERE
 
+create table instructions(
+  id serial,
+  specification text not null,
+  list_order integer not null,
+  recipe_id integer not null,
+  primary key(id),
+  foreign key(recipe_id) references recipes(id)
+);
 
 
 
@@ -64,7 +78,11 @@
 
 -- YOUR CODE HERE
 
-
+create table units_of_measure(
+  id serial,
+  name varchar(20) not null,
+  primary key(id)
+);
 
 
 
@@ -87,8 +105,16 @@
 
 -- YOUR CODE HERE
 
-
-
+create table ingredients(
+  id serial,
+  amount numeric(5, 2) not null,
+  unit_of_measure_id integer not null,
+  food_stuff varchar(500) not null,
+  recipe_id integer not null,
+  primary key(id),
+  foreign key(unit_of_measure_id) references units_of_measure(id),
+  foreign key(recipe_id) references recipes(id)
+);
 
 
 

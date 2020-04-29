@@ -10,6 +10,7 @@ DROP USER IF EXISTS recipe_box_app;
 
 -- YOUR CODE HERE
 
+create user recipe_box_app with password 'SPuaQ3no';
 
 
 
@@ -18,3 +19,5 @@ DROP USER IF EXISTS recipe_box_app;
 -- connect privileges from PUBLIC just to have good security.
 
 -- YOUR CODE HERE
+
+create database recipe_box with owner recipe_box_app;
