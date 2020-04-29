@@ -120,3 +120,4 @@ console.
 [Parameterized query]: https://node-postgres.com/features/queries#Parameterized%20query
 [recipe box data model]: https://appacademy-open-assets.s3-us-west-1.amazonaws.com/Module-SQL/assets/sql-recipe-box-data-model.png
 # recipe-box-project-SQL
+# recipe-box-project-SQL
